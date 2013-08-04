@@ -1,0 +1,123 @@
+Google XML Site Haritasý Modülü
+PHP Fusion 7.x içindir
+Versiyon: 3.00 (2010.04.12)
+Kodlama: Arda Kýlýçdaðý (SoulSmasher)
+Web: www.soulsmasher.net , www.phpfusionturkiye.com
+
+Bu Modül Ýle Fusion Tabaný Web Siteniz Ýçin Site içeriklerinizden Google XML Site Haritasý Oluþturabilirsiniz
+
+Özellikler:
+-----------------------
+1-Tek Týklama Ýle Google Site Haritasý Oluþturma
+2-Site Haritasý blok aktif edilirse belirli periyotlarda (standart: 24 saatte bir) yeniden güncellenmekte
+3-Yöneticiler isteðe özel site haritasýný istedikleri anda yeniden oluþturabilirler
+4-Site haritasý statik bir sitemap.xml dosyasýna yazýldýðý için Google pinglediði zaman sunucuyu yormayacaktýr
+5-Site haritasýný meþhur arama motorlarýna tek týklama ile ekleme özelliði
+6-Eklenen panelde adminler için hýzlý eriþim arayüzü
+7-Kök klasörde ayrýca bulunan sitemap.php adýndaki dosya, sitemap.xml in ayný çýktýsýný dinamik olarak oluþturur (sitemap.xml in oluþturulmasýný etkilemez, dinamik þekilde kullanmayacaksanýz silebilirsiniz)
+
+Mevcut Diller:
+-----------------------
+Türkçe
+Ýngilizce
+Danimarkaca (Helmuth'a Teþekkürler)
+Rusça (sbr80'e Teþekkürler)
+Almanca (slaughter'e Teþekkürler)
+Macarca (Rottenbacher Tamás ( sYska/!/ )'e Teþekkürler)
+Ýspanyolca (NobNob'a Teþekkürler)
+Hollandaca (Martijn78'e teþekkürler)
+Polonyaca
+Ýsveççe (etxgmg'e Teþekkürler!)
+
+Kurulum:
+-----------------------
+1-"files" klasörü altýndaki tüm dosyalarý sitenizin kök klasörüne yükleyin
+2-kök klasöre eklenen boþ sitemap.xml dosyasýna 777 CHMOD verin
+3-yönetici paneli/sistem yönetimi/modüller den "Google Sitemap"i aktifleþtirin
+4-Sitemap XML Paneli otomatik olarak alt orta bloklara eklenip aktif olacaktýr. Panelin görünür içeriði sadece yöneticilere özeldir, panelin asýl amacý görünmeyen kýsmýndaki kodlar ile Site haritasýnýn otomatik olarak oluþturulmasýdýr.
+
+Modüllere eklenen arayüzden site haritasýnýn en son ne zaman oþuþturulduðunu öðrenebilir, ayrýca o an yeniden oluþturabilir ve de sitenize ekleyebilirsiniz
+
+Sýkça sorulan Sorular:
+-----------------------
+*Pek çok kiþi ayarlarýný düzgün yapmadýðýndan þu hatadan þikayetçi:
+	Stylesheet yüklenmesinde hata: XSLT-Stylesheet için belirtilen bir XML-MIME-Türü yok:http://www.siteniz.com/infusions/sitemapxml/sitemap.xsl
+	Bunun sebebi site haritanýzýn admin ayarlarýndaki site adresinizin www'lu olup olmamasýndan dolayýdýr.
+	Çözmek için, 
+		Sitenizi http://www.siteniz.com/ þeklinde kullanýyorsanýz:
+			Yönetici paneli/modüller/google sitemap a gidin, site adresinizi http://www.siteniz.com/[klasöraltýndaysaklasöradý] biçiminde deðiþtirin
+			Artýk http://www.siteniz.com/sitemap.xml de düzgün gözükecektir
+		Sitenizi http://siteniz.com þeklinde kullanýyorsanýz:
+			Yönetici paneli/modüller/google sitemap a gidin, site adresinizi http://siteniz.com/[klasöraltýndaysaklasöradý] biçiminde deðiþtirin
+			Artýk http://www.siteniz.com/sitemap.xml de düzgün gözükecektir
+	
+	Alternatif olarak, þu sayfadaki .htaccess dosyasýný kendinize göre düzenleyip kullanabilirsiniz:
+		http://www.phpfusion-mods.com/forum/viewthread.php?thread_id=7819&rowstart=140#post_45429		
+			
+
+Ýpuçlarý:
+-----------------------
+24 saatte bir otomatik harita yenilenmesini saðlayan olay sitemapxml_panel içerisindedir, bu sebeple eðer sol veya sað bloklarý gizliyorsanýz tavsiyem bloðu eklerken "alt orta" olarak ekleyip "tüm sayfalarda göster" i seçmenizden yanadýr
+Sitemap güncellenme süresindeki standart olarak gelen 86400 deðeri saniye cinsinden 1 güne tekabül eder. onu isteðinize göre yükseltebilir ya da düþürebilirsiniz
+
+Güncelleme:
+----------------------------------
+Eski sürümlerden sonra veritabanýnda köklü bir deðiþikliðe gidildi. Bu yüzden en saðlýklý güncelleme metodu silip yeniden kurmanýz olacaktýr.
+	Öncelikle modülü yönetici paneli->sistem yönetimi-> modüller kýsmýndan kaldýrýn,
+	Sonra infusions/sitemapxml ve infusions/sitemapxml_panel klasörlerini silin
+	Daha sonra yeni modülün kurulum aþamalarýný izleyin.
+
+Sürüm Geçmiþi
+----------------
+3.00 - Admin arayüzü daha sade ve þýk bir hale büründü (kneekoo'ya önerisinden dolayý teþekkürler!)
+	   Admin arayüzünde optimizasyona gidildi.
+	   Firma rehberi sisteme dahil edildi.
+	   Artýk tüm içerikler için kýsýtlama sayacý bulunmakta.
+	   Veritabanýnda ve sorgularda optimizasyona gidildi.
+	   Hollandaca dil dosyasý Martijn78 tarafýndan yeniden güncellendi.
+	   Ýsveççe dil dosyasý eklendi (etxgmg'e Teþekkürler)
+2.60 - Sitemap XML arama motorlarýna eklenmesi artýk dahili sayfalardan oluyor
+	   Sitemap XML de pro_download_panel deki sorun giderildi
+	   Site haritasýndaki ufak bir dil sorunu giderildi
+2.51 - infusion.php deki ve dil dosyasýndaki ufak bir hata giderildi (Teþekkürler Sharky!)
+	   Özel eklenen site adresi sonuna / ekleme zorunluluðu ayarlandý
+	   sitemap .xml oluþturan fonksiyonda (make_sitemapxml()) fclose() parametresi için ufak bir geliþtirmeye gidildi.
+2.50 - Artýk haritada halihazýrdaki linkler dýþýnda özel linkler de eklenebiliyor
+	   Artýk site haritasý üzerinden site adresiniz seçilebiliyor (http:// vs sorun yaþayanlar için)
+	   Hollandaca dili eklendi (Martijn78'e Teþekkürler)
+2.14 - Ti Blog System link yapýsý düzeltildi
+	   Ýspanyolca dili eklendi (NobNob'a Teþekkürler)
+	   Ýncelemelerde readarticle.php yerine articles.php ye gidiyor.
+2.13 - Üye Profilleri özelliði site haritasýna eklendi
+	   Macarca Dil Eklendi (teþekkürler Rottenbacher Tamás ( sYska/!/ ))
+	   Ýncelemelerdeki xml oluþturma ile ilgili ufak hata giderildi
+2.12 - Admin panelinde ayarlarýn kaydedilmesini engelleyen ufak bir html kodu hatasý düzeltildi
+	   MWP Ti Blog sistemi ve Kroax Kategorileri dahil edildi
+	   sitemap_functions.php de ufak kod temizliði
+2.11 - Admin sayfasýndaki ufak bir dil sorunu giderildi
+	   sitemap_functions.php de ufak birkaç düzenleme
+	   Rusça dili eklendi (sbr80 teþekkürler:))
+	   Almanca dili eklendi (slaughter teþekkürler:))
+2.10 - Pro Download Panel (1.85 ve üstü sürümleri), Kroax ve Varcade Sistemleri artýk site haritasý için destekleniyor
+	   Resim Albümleri ve Resimler artýk haritada destekleniyor
+	   Site haritasý yeniden üretim süresi artýk ayarlar arayüzünden seçilebilecek
+	   Tüm içerikler artýk site haritasýnda dahil ya da hariç tutmak için seçilebilir durumda
+	   Özel sayfalar eriþim kontrolü eklendi
+	   Weblink kategorilerindeki ufak bir sorun giderildi
+2.01 - Baþlýk gösterimi yamalandý
+	   Dosyalar bölümünün XML çözümlemesi düzeltildi
+	   Danimarkaca eklendi (Teþekkürler Helmutth!)
+2.00 - Eski PHP Sürümlerinde gösterilen Tarih Hatasý Giderildi
+	   Web Linkleri ve Forum Kategorileri Silindi (bildiðim kadarý ile web linkleri seo için kötü, ve de forum kategorileri forumlar olduðundan gereksizdir)
+	   Haber Kategorileri Eklendi
+	   Tüm Frekans ve Öncelik Deðerleri Yönetici Panelinen Ayarlanabilir Hale Getirildi
+	   Bazý Ýstekler Doðrultusunda Site Haritasýnýn Dinamik Oluþturulan Versiyonu olan sitemap.php eklendi
+1.05 - XML Site Haritasý Güncellendi, Güncel Arayüz Eklendi
+	   Admin panelindeki baþlýk metni sorunu giderildi 
+1.04 - dosya oluþturma süresi gösterim sorunu giderildi
+1.03 - weblink_cat_id sorunu giderildi
+1.02 - viewthread.php sorunu giderildi
+1.01 - weblink_id sorunu giderildi
+
+
+bu modül beni sevenlere ve phpfusionturkiye.com üyelerine armaðan olsun :)
